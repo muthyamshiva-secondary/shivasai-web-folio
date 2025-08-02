@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, FolderOpen } from "lucide-react";
+import { Github, FolderOpen } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -12,8 +12,7 @@ const ProjectsSection = () => {
       technologies: ["Java", "Swing (GUI)", "MySQL", "JDBC"],
       featured: true,
       links: {
-        github: "#",
-        demo: "#"
+        github: "#"
       }
     },
     {
@@ -23,19 +22,7 @@ const ProjectsSection = () => {
       technologies: ["Python", "OpenCV", "MediaPipe", "Scikit-learn", "TensorFlow", "NumPy"],
       featured: true,
       links: {
-        github: "#",
-        demo: "#"
-      }
-    },
-    {
-      title: "Web Portfolio",
-      description: "A responsive personal portfolio website showcasing my projects, skills, and experience. Built with modern web technologies and optimized for performance across all devices.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
-      featured: false,
-      links: {
-        github: "#",
-        demo: "#"
+        github: "#"
       }
     }
   ];
@@ -96,16 +83,10 @@ const ProjectsSection = () => {
 
                       {/* Project Links */}
                       <div className="flex gap-4">
-                        <Button variant="outline" size="sm" asChild>
+                        <Button variant="default" size="sm" asChild>
                           <a href={project.links.github} target="_blank" rel="noopener noreferrer">
                             <Github className="w-4 h-4 mr-2" />
-                            Code
-                          </a>
-                        </Button>
-                        <Button variant="default" size="sm" asChild>
-                          <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Live Demo
+                            View Code
                           </a>
                         </Button>
                       </div>
@@ -152,16 +133,10 @@ const ProjectsSection = () => {
 
                   {/* Project Links */}
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="flex-1" asChild>
+                    <Button variant="default" size="sm" className="w-full" asChild>
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-3 h-3 mr-1" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button variant="default" size="sm" className="flex-1" asChild>
-                      <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        Demo
+                        <Github className="w-4 h-4 mr-2" />
+                        View Code
                       </a>
                     </Button>
                   </div>
