@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Award, Calendar, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { GraduationCap, Award, Calendar, MapPin, ExternalLink } from "lucide-react";
 
 const EducationSection = () => {
   const education = [
@@ -48,7 +49,8 @@ const EducationSection = () => {
       issuer: "Apna College",
       date: "2023",
       type: "Completion Certificate",
-      description: "Comprehensive course covering data structures and algorithms implementation in Java."
+      description: "Comprehensive course covering data structures and algorithms implementation in Java.",
+      link: "https://drive.google.com/file/d/1piueVRGZgqkYLtl8wmQtUnpuuutiTuV2/view"
     }
   ];
 
@@ -153,9 +155,20 @@ const EducationSection = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                       {cert.description}
                     </p>
+                    {cert.link && (
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => window.open(cert.link, "_blank")}
+                        className="w-full"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View DSA Certificate
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               ))}

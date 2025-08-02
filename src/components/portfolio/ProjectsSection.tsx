@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, FolderOpen } from "lucide-react";
+import { FolderOpen } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -81,15 +81,6 @@ const ProjectsSection = () => {
                         ))}
                       </div>
 
-                      {/* Project Links */}
-                      <div className="flex gap-4">
-                        <Button variant="default" size="sm" asChild>
-                          <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4 mr-2" />
-                            View Code
-                          </a>
-                        </Button>
-                      </div>
                     </CardContent>
                   </div>
                 </div>
@@ -97,61 +88,6 @@ const ProjectsSection = () => {
             ))}
           </div>
 
-          {/* Additional Projects */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.filter(project => !project.featured).map((project) => (
-              <Card key={project.title} className="overflow-hidden shadow-soft hover:shadow-medium transition-smooth">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-primary/10 hover:bg-primary/5 transition-colors"></div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                    {project.description.substring(0, 120)}...
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs px-2 py-1">
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <Badge variant="secondary" className="text-xs px-2 py-1">
-                        +{project.technologies.length - 3}
-                      </Badge>
-                    )}
-                  </div>
-
-                  {/* Project Links */}
-                  <div className="flex gap-2">
-                    <Button variant="default" size="sm" className="w-full" asChild>
-                      <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        View Code
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* View More Projects */}
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
-              <Github className="w-4 h-4 mr-2" />
-              View More Projects on GitHub
-            </Button>
-          </div>
         </div>
       </div>
     </section>
