@@ -82,15 +82,12 @@ const SkillsSection = () => {
                       <span>{category.title}</span>
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3">
                     {category.skills.map((skill) => (
-                      <div key={skill.name} className="space-y-2">
-                      <div className="flex justify-between items-center">
+                      <div key={skill.name}>
                         <span className="text-sm font-medium text-foreground">
                           {skill.name}
                         </span>
-                      </div>
-                        <Progress value={skill.level} className="h-2" />
                       </div>
                     ))}
                   </CardContent>
